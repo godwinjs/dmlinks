@@ -48,7 +48,7 @@ interface BasicProps {
           {/* Dark Mode Toggle Button */}
           <button
             onClick={toggleDarkMode}
-            className={`absolute top-4 right-4 lg:p-2 px-4 rounded-full ${
+            className={`absolute top-4 right-4 lg:p-2 rounded-full ${
               isDarkMode ? 'bg-gray-700 text-white' : 'bg-white text-gray-800'
             }`}
           >
