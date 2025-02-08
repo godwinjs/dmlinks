@@ -9,8 +9,8 @@ const User = {
     image: mj,
     profession: "Proffesional Nurse",
     aboutMe: "Welcome to MJ health, your trusted partner in intimate wellness and enhancement. We specialize in crafting natural, effective, and discreet solutions designed to elevate your intimate life and boost your confidence. Whether you're looking to enhance your natural beauty, improve your intimate experiences, or achieve your personal wellness goals, our carefully curated range of products is here to support you every step of the way.",
-    whatsapp: "https://wa.me/1234567890",
-    instagram: "https://www.instagram.com/mj.codes",
+    socials: [{name: 'whatsapp', url: "https://wa.me/1234567890", color: 'light-green'},
+        {name: 'instagram', url: "https://www.instagram.com/mj.codes", color: 'red-400'}]
 }
 
 

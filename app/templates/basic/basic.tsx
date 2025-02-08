@@ -7,8 +7,7 @@ interface BasicProps {
     userName: string;
     profession: string;
     aboutMe: string;
-    whatsapp?: string;
-    instagram?: string;
+    socials?: { name: string; url: string, color: string }[];
     image: string | StaticImageData;
     initials?: string;
   }
@@ -16,16 +15,16 @@ interface BasicProps {
   export default function Basic( { user }: { user: BasicProps } ) {
 
     const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
-    const { userName, profession, aboutMe, whatsapp, instagram, image  } = user;
+    const { userName, profession, aboutMe, socials, image  } = user;
   
     const toggleDarkMode = (): void => {
       setIsDarkMode(!isDarkMode);
     };
   
     return (
-      <div className={` absolute min-h-screen max-w-[600px] flex flex-col ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-milk text-gray-800'} `}>
+      <div className={` absolute min-h-screen max-w-[600px] flex flex-col ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-800'} `}>
         {/* Header */}
-        <header className="relative h-60 flex items-center justify-center border-b border-gray-200 ">
+        <header className="relative h-60 flex items-center justify-center ">
           {/* Gradient Background */}
           <div
             className={`absolute inset-0 bg-gradient-to-b ${
@@ -62,14 +61,21 @@ interface BasicProps {
         </main>
   
         {/* Social Icons */}
-        <footer className="flex justify-center space-x-6 p-6 border-t border-gray-200">
-          <a href={whatsapp} className="text-2xl hover:text-light-brown">
-            <i className="fab fa-linkedin"></i>
-          </a>
-          <a href={instagram} className="text-2xl hover:text-light-brown">
-            <i className="fab fa-github"></i>
-          </a>
+        <footer className="flex justify-center space-x-6 p-6">
+              {socials?.map(({ name, url, color }) => (
+              <a
+                key={name}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`text-${color} hover:text-light-brown`}
+              >
+                <i className={`fab fa-${name} fa-2x`}></i>
+              </a>
+            ))}
         </footer>
+
+        <div className="bg-gray-900 text-center cursor-pointer mt-4 text-white"><p>&copy; Copyright BuynariSolutions <span>{new Date().getFullYear() }</span></p></div>
       </div>
     );
   }
