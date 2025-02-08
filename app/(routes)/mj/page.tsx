@@ -1,12 +1,40 @@
+import type { Metadata } from 'next';
+
 import Basic from "@/app/templates/basic/basic"
+import mj from "@/app/assets/image/profile/mj.jpeg"
+
+const User = {
+    initials: 'MJ',
+    userName: "MJ Health",
+    image: mj,
+    profession: "Proffesional Nurse",
+    aboutMe: "Welcome to MJ health, your trusted partner in intimate wellness and enhancement. We specialize in crafting natural, effective, and discreet solutions designed to elevate your intimate life and boost your confidence. Whether you're looking to enhance your natural beauty, improve your intimate experiences, or achieve your personal wellness goals, our carefully curated range of products is here to support you every step of the way.",
+    whatsapp: "https://wa.me/1234567890",
+    instagram: "https://www.instagram.com/mj.codes",
+}
+
+
+export const metadata: Metadata = {
+    title: `${User.userName}`,
+    description: 'your trusted partner in intimate wellness and enhancement.',
+    openGraph: {
+      title: 'WhatsApp',
+      description: 'your trusted partner in intimate wellness and enhancement.',
+      url: '/mj', //full vercel url
+      images: [
+        {
+          url: '/profile/mj.jpeg', 
+          width: 800,
+          height: 600,
+          alt: `${ User.initials} image`,
+        },
+      ],
+    },
+};
 
 export default function MJ() {
-    const user = {
-        userName: "MJ",
-        profession: "Software Engineer",
-        aboutMe: "I'm a software engineer who loves building web applications using React and Next.js. I'm passionate about learning new technologies and sharing my knowledge with the community.",
-        whatsapp: "https://wa.me/1234567890",
-        instagram: "https://www.instagram.com/mj.codes",
-    }
-    return <Basic user = {user} />
+
+    return <div className="flex items-center justify-center h-screen">
+                    <Basic user = {User} />
+                </div>
 }
