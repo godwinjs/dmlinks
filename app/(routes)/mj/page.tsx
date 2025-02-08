@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import Basic from "@/app/templates/basic/basic"
 import mj from "@/app/assets/image/profile/mj.jpeg"
+import { Analytics } from '@vercel/analytics/react';
 
 const User = {
     initials: 'MJ',
@@ -36,5 +37,6 @@ export default function MJ() {
 
     return <div className="flex items-center justify-center h-screen">
                     <Basic user = {User} />
+                    <Analytics />
                 </div>
 }
