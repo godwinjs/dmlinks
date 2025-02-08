@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: `${User.userName}`,
     description: 'your trusted partner in intimate wellness and enhancement.',
     openGraph: {
-      title: 'WhatsApp',
+    title: `${User.userName}`,
       description: 'your trusted partner in intimate wellness and enhancement.',
       url: '/mj', //full vercel url
       images: [
