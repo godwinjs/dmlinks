@@ -80,7 +80,7 @@ interface BasicProps {
             ))}
         </footer>
 
-        <div onClick={() => {router.push('https://wa.me/+2348103023419/?text=Please%2C%20What%20is%20your%20name%20and%20what%20app%20do%20you%20want%20to%20create%3F')}} className="bg-gray-900 text-center cursor-pointer mt-4 text-white"><p>&copy; Copyright Buynari Solutions <span>{new Date().getFullYear() }</span></p></div>
+        <div onClick={() => {router.push('https://wa.me/+12512987098/?text=Please%2C%20What%20is%20your%20name%20and%20what%20app%20do%20you%20want%20to%20create%3F')}} className="bg-gray-900 text-center cursor-pointer mt-4 text-white"><p>&copy; Copyright BS <span>{new Date().getFullYear() }</span></p></div>
       </div>
     );
   }
